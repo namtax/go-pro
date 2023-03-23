@@ -14,16 +14,18 @@ func init() {
 		// fmt.Println("-----")
 		pc[i] = pc[i/2] + byte(i&1)
 	}
-	fmt.Println(pc)
+	// fmt.Println(pc)
 }
 
 func PopCount(x uint64) int {
-	fmt.Printf("1st shift = %v\n", byte(x>>(0*8)))
-	fmt.Printf("1st byte = %v\n", pc[byte(x>>(0*8))])
-	fmt.Printf("2nd shift = %v\n", byte(x>>(1*8)))
-	fmt.Printf("2nd byte = %v\n", pc[byte(x>>(1*8))])
-	fmt.Println("------")
-
+	fmt.Printf("x = %v\n", x)
+	dd := byte(x >> (0 * 8))
+	fmt.Printf("dd = %v\n", dd)
+	fmt.Printf("current bytes = %v\n", byte(x>>(0*8)))
+	fmt.Printf("current bytes = %v\n", byte(x>>(1*8)))
+	fmt.Printf("current bytes = %v\n", byte(x>>(2*8)))
+	fmt.Printf("current bytes = %v\n", byte(x>>(3*8)))
+	fmt.Printf("current bytes = %v\n", byte(x>>(4*8)))
 	return int(pc[byte(x>>(0*8))] +
 		pc[byte(x>>(1*8))] +
 		pc[byte(x>>(2*8))] +
